@@ -63,4 +63,4 @@ The final Tableau dashboard provides an interactive view of fraud hotspots, help
 
 ---
 ## Infographic
-[Bank_ETL_flowchart](https://github.com/user-attachments/assets/4ae5ed16-7b8b-405a-88b0-77ecc6666de1)
+![Bank_ETL_flowchart](https://github.com/user-attachments/assets/4ae5ed16-7b8b-405a-88b0-77ecc6666de1)
