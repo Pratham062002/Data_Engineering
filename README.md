@@ -54,7 +54,7 @@ Key transformations included:
 - **Random Forest Classifier:** Used to predict fraudulent transactions. Outputs are saved as pickle files (`fraud_report` and `city_report`) for further visualization.
 
 ### Parquet Files
-- Transformed data is stored in Parquet format, including `fraud_large_transactions.parquet` for model training purposes.
+- Transformed data is stored in Parquet format, including `fraud_large_transactions.parquet` for model training and visualization purposes along with the predicted fraud tables in pkl format.
 
 ---
 
