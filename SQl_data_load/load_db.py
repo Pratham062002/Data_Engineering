@@ -7,8 +7,8 @@ from s3fs.core import S3FileSystem
 def load_data():
     # Initialize S3 connection
     s3 = S3FileSystem(anon=False)
-    DIR_wh = 's3://ece5984-s3-atharva47/Project/DownstreamFiles'  # S3 bucket directory
-
+    DIR_wh = 's3://ece5984-s3-prathamj//Bank_ETL/reports'  # S3 bucket directory
+    DIR_par = 's3://ece5984-s3-prathamj//Bank_ETL/features'
     try:
         # Load .pkl files using joblib
         with s3.open(f"{DIR_wh}/fraud_report_with_cities.pkl", 'rb') as f:
@@ -20,7 +20,7 @@ def load_data():
         print("Loaded city_fraud_report.pkl successfully.")
 
         # Load .parquet file
-        fraud_large_transactions = pd.read_parquet(f"{DIR_wh}/fraud_large_transactions.parquet", storage_options={'anon': False})
+        fraud_large_transactions = pd.read_parquet(f"{DIR_par}/fraud_large_transactions.parquet", storage_options={'anon': False})
         print("Loaded fraud_large_transactions.parquet successfully.")
 
     except Exception as e:
@@ -29,15 +29,15 @@ def load_data():
 
     # MySQL credentials
     user = "admin"
-    pw = "C|r(kf!$]8c.1smc.HxN<D$v_S(Z"  # Replace with the updated password
-    endpnt = "data-eng-db.cluster-cwgvgleixj0c.us-east-1.rds.amazonaws.com"  # Replace with your RDS endpoint
-    db_name = "atharva47"  # Replace with your database name
+    pw = "C|r(kf!$]8c.1smc.HxN<D$v_S(Z"
+    endpnt = "data-eng-db.cluster-cwgvgleixj0c.us-east-1.rds.amazonaws.com"
+    db_name = "atharva47"
 
     try:
-        # Connect to MySQL server (without specifying a database)
+        # Connect to MySQL server
         engine = create_engine(f"mysql+pymysql://{user}:{pw}@{endpnt}")
 
-        # Check if the database already exists and create it if not
+
         with engine.connect() as connection:
             db_exists = connection.execute(f"SHOW DATABASES LIKE '{db_name}';").fetchone()
             if not db_exists:
@@ -46,7 +46,7 @@ def load_data():
         # Reconnect to the specific database
         engine = create_engine(f"mysql+pymysql://{user}:{pw}@{endpnt}/{db_name}")
 
-        # Insert DataFrames into the MySQL database
+        # Inserting DataFrames into the MySQL database
         print("Inserting data into MySQL...")
         fraud_report_with_cities.to_sql('fraud_report_with_cities', con=engine, if_exists='replace', index=False, chunksize=1000)
         city_fraud_report.to_sql('city_fraud_report', con=engine, if_exists='replace', index=False, chunksize=1000)
