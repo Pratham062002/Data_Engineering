@@ -29,7 +29,7 @@ def load_data():
 
     # MySQL credentials
     user = "admin"
-    pw = "C|r(kf!$]8c.1smc.HxN<D$v_S(Z"
+    pw = "9G>c(JolkKDkpanP:jBfp?P+<{yJ"
     endpnt = "data-eng-db.cluster-cwgvgleixj0c.us-east-1.rds.amazonaws.com"
     db_name = "atharva47"
 
