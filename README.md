@@ -64,3 +64,11 @@ The final Tableau dashboard provides an interactive view of fraud hotspots, help
 ---
 ## Infographic
 ![Bank_ETL_flowchart](https://github.com/user-attachments/assets/4ae5ed16-7b8b-405a-88b0-77ecc6666de1)
+
+---
+### Thorough Investigation
+This project demonstrates the ability to predict fraudulent transactions and strong scalability with its cloud-native design using AWS S3 and a modular ETL pipeline. Enhancements like user-specific features, geographic aggregation, and Tableau visualizations make it impactful for stakeholders seeking actionable insights.
+
+To scale further, transitioning to real-time fraud detection using tools like Apache Kafka and implementing periodic retraining of the Random Forest model are recommended. While the current project requires manual intervention for batch updates and model retraining, automating these processes through a fully integrated MLOps pipeline would significantly improve efficiency and reliability.
+
+Additionally, strengthening compliance with regulations such as GDPR and scaling the infrastructure to accommodate larger datasets and live transaction streams would solidify this pipeline as a robust, innovative solution for fraud detection. These enhancements position the project as a forward-thinking initiative that bridges machine learning and data engineering for effective fraud prevention.
