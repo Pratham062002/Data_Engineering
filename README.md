@@ -67,6 +67,11 @@ Key transformations included:
 ![Bank Dashboard](https://github.com/user-attachments/assets/9962b81b-3f93-4545-9db1-167640dd0447)
 
 ---
+
+Code: 
+
+---
+
 ### Thorough Investigation
 This project demonstrates the ability to predict fraudulent transactions and strong scalability with its cloud-native design using AWS S3 and a modular ETL pipeline. Enhancements like user-specific features, geographic aggregation, and Tableau visualizations make it impactful for stakeholders seeking actionable insights.
 
