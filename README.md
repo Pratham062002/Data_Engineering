@@ -58,6 +58,7 @@ Key transformations included:
 
 ## Infographic
 ![Bank_ETL_flowchart](https://github.com/user-attachments/assets/4ae5ed16-7b8b-405a-88b0-77ecc6666de1)
+
 ![Bank Dashboard](https://github.com/user-attachments/assets/9962b81b-3f93-4545-9db1-167640dd0447)
 
 ---
