@@ -1,0 +1,10 @@
+pandas
+pyarrow
+s3fs
+boto3
+numpy
+scikit-learn
+joblib
+sqlalchemy
+pymysql
+apache-airflow
