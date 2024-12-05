@@ -1,6 +1,6 @@
 # Bank ETL Pipeline for Credit Card Fraud Detection and Visualization
 
-## Project Overview
+## Project Function
 This project simulates an ETL (Extract, Transform, Load) pipeline designed to detect and visualize credit card fraud in financial transactions, replicating a bank’s data processing framework. Using the Kaggle Fraud Detection dataset, the pipeline identifies high-risk geographic areas ("red zones") prone to fraudulent activity. The goal is to help bank stakeholders improve fraud prevention strategies by visualizing these areas in Tableau.
 
 ---
@@ -52,15 +52,29 @@ Key transformations included:
 - **Date Formatting:** Standardized to `yyyyMMdd` for dates and `yyyy-MM-dd HH:mm:ss` for timestamps.
 - **Feature Engineering:** Added calculated columns like `time_since_last_transaction` and `is_large_transaction` to capture important transaction patterns.
 - **Random Forest Classifier:** Used to predict fraudulent transactions. Outputs are saved as pickle files (`fraud_report` and `city_report`) for further visualization.
-
-### Parquet Files
-- Transformed data is stored in Parquet format, including `fraud_large_transactions.parquet` for model training and visualization purposes along with the predicted fraud tables in pkl format.
+- **Parquet Files:** Transformed data is stored in Parquet format, including `fraud_large_transactions.parquet` for model training and visualization purposes along with the predicted fraud tables in pkl format.
 
 ---
 
-## Visualization
-The final Tableau dashboard provides an interactive view of fraud hotspots, helping stakeholders identify high-risk areas and improve fraud prevention strategies.
-
----
 ## Infographic
+
+**ETL Pipeline:**
+
 ![Bank_ETL_flowchart](https://github.com/user-attachments/assets/4ae5ed16-7b8b-405a-88b0-77ecc6666de1)
+
+**Result Visualization:**
+
+![Bank Dashboard](https://github.com/user-attachments/assets/9962b81b-3f93-4545-9db1-167640dd0447)
+
+---
+
+**Code:** [Bank ETL Pipeline for Credit Card Fraud Detection and Visualization](https://github.com/Pratham062002/Data_Engineering.git)
+
+---
+
+### Thorough Investigation
+This project demonstrates the ability to predict fraudulent transactions and strong scalability with its cloud-native design using AWS S3 and a modular ETL pipeline. Enhancements like user-specific features, geographic aggregation, and Tableau visualizations make it impactful for stakeholders seeking actionable insights.
+
+To scale further, transitioning to real-time fraud detection using tools like Apache Kafka and implementing periodic retraining of the Random Forest model are recommended. While the current project requires manual intervention for batch updates and model retraining, automating these processes through a fully integrated MLOps pipeline would significantly improve efficiency and reliability.
+
+Additionally, strengthening compliance with regulations such as GDPR and scaling the infrastructure to accommodate larger datasets and live transaction streams would solidify this pipeline as a robust, innovative solution for fraud detection. These enhancements position the project as a forward-thinking initiative that bridges machine learning and data engineering for effective fraud prevention.
