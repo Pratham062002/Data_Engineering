@@ -4,12 +4,12 @@ import pyarrow.parquet as pq
 import s3fs  # Required for saving files to S3
 
 # Define the S3 bucket and folder
-S3_BUCKET = 'your-s3-bucket-name'
-S3_FOLDER = 'fraud-detection/'
+S3_BUCKET = 's3://ece5984-s3-prathamj'
+S3_FOLDER = '/Bank_ETL/features/'
 
 def transform_data():
     # Load the CSV file containing the raw data
-    raw_data = pd.read_csv('fraudTest.csv')  # Replace with the path to your local file if different
+    raw_data = pd.read_csv('s3://ece5984-s3-prathamj/Bank_ETL/fraudTrain.csv')    
 
     # Transforming 'trans_date_trans_time' column to standard format for banking
     if 'trans_date_trans_time' in raw_data.columns:
