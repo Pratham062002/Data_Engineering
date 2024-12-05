@@ -1,0 +1,38 @@
+import pandas as pd
+import joblib
+
+def convert_pkl_to_parquet():
+    # Paths to local .pkl files
+    fraud_report_pkl = "fraud_report_with_cities.pkl"
+    city_report_pkl = "city_fraud_report.pkl"
+
+    # Output paths for .parquet files
+    fraud_report_parquet = "fraud_report_with_cities.parquet"
+    city_report_parquet = "city_fraud_report.parquet"
+
+    try:
+        # Load the fraud_report_with_cities.pkl file
+        print(f"Loading {fraud_report_pkl}...")
+        fraud_report_with_cities = joblib.load(fraud_report_pkl)
+        print(f"{fraud_report_pkl} loaded successfully.")
+
+        # Convert to Parquet
+        print(f"Converting {fraud_report_pkl} to {fraud_report_parquet}...")
+        fraud_report_with_cities.to_parquet(fraud_report_parquet, engine="pyarrow")
+        print(f"Saved as {fraud_report_parquet} successfully.")
+
+        # Load the city_fraud_report.pkl file
+        print(f"Loading {city_report_pkl}...")
+        city_fraud_report = joblib.load(city_report_pkl)
+        print(f"{city_report_pkl} loaded successfully.")
+
+        # Convert to Parquet
+        print(f"Converting {city_report_pkl} to {city_report_parquet}...")
+        city_fraud_report.to_parquet(city_report_parquet, engine="pyarrow")
+        print(f"Saved as {city_report_parquet} successfully.")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    convert_pkl_to_parquet()
